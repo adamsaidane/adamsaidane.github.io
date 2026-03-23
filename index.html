@@ -532,6 +532,50 @@
   }
 
   /* ─── CONTACT ────────────────────────────────────────────────── */
+
+  /* ─── OPEN SOURCE ────────────────────────────────────────────── */
+  #opensource { background: var(--surface); }
+  .os-card {
+    background: var(--surface-container-low);
+    border-radius: 12px; padding: 2rem 2.5rem;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .os-card:hover { transform: translateY(-3px); box-shadow: 0 0 40px rgba(0,241,254,0.07); }
+  .os-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; bottom: 0; width: 3px;
+    background: linear-gradient(to bottom, var(--primary-container), var(--secondary));
+  }
+  .os-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+  .os-project { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+  .os-badge { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 999px; background: rgba(0,241,254,0.1); color: var(--primary-container); }
+  .os-subtitle { font-family: var(--font-mono); font-size: 0.75rem; color: var(--secondary); margin-bottom: 1rem; }
+  .os-desc { font-size: 0.9rem; color: var(--on-surface-variant); line-height: 1.75; margin-bottom: 1.25rem; }
+  .os-desc strong { color: var(--on-surface); }
+  .os-stats { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+  .os-stat { background: var(--surface-container-high); border-radius: 8px; padding: 0.75rem 1.25rem; display: flex; flex-direction: column; gap: 0.15rem; }
+  .os-stat-val { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--primary-container); }
+  .os-stat-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); }
+
+  /* ─── CERTIFICATIONS ─────────────────────────────────────────── */
+  #certifications { background: var(--surface-low); }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+  .cert-card {
+    background: var(--surface-container-low); border-radius: 12px; padding: 1.5rem;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(213,117,255,0.08); }
+  .cert-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--secondary); }
+  .cert-issuer-row { display: flex; align-items: center; justify-content: space-between; }
+  .cert-issuer { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--secondary); }
+  .cert-year { font-family: var(--font-mono); font-size: 0.65rem; color: var(--on-surface-variant); }
+  .cert-name { font-family: var(--font-display); font-size: 1rem; font-weight: 600; line-height: 1.3; }
+  .cert-desc { font-size: 0.8rem; color: var(--on-surface-variant); line-height: 1.6; }
+  .cert-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+
   #contact {
     background: var(--surface-container-low);
     text-align: center;
@@ -618,10 +662,12 @@
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#opensource">Open Source</a>
+    <a href="#certifications">Certifications</a>
     <a href="#associations">Community</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="mailto:adam.saidane@insat.ucar.tn" class="nav-cta">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#7d1c191c10530e1c14191c13183d14130e1c0953081e1c0f530913" class="nav-cta">Get in touch</a>
 </nav>
 
 <!-- ─── HERO ─────────────────────────────────────────────────────── -->
@@ -948,6 +994,129 @@
   </div>
 </section>
 
+<!-- ─── OPEN SOURCE ─────────────────────────────────────────────────── -->
+<section id="opensource">
+  <div class="section-inner">
+    <div class="section-label reveal">05 — Open Source</div>
+    <h2 class="section-title reveal">Code I gave <em>back.</em></h2>
+
+    <div class="os-card reveal">
+      <div class="os-header">
+        <div>
+          <div class="os-project">Keras — Deep Learning Library</div>
+          <div class="os-subtitle">keras-team / keras · github.com/keras-team/keras</div>
+        </div>
+        <span class="os-badge">Contributor</span>
+      </div>
+      <p class="os-desc">
+        Contributed to <strong>Keras</strong>, the high-level deep learning API built on TensorFlow and
+        part of the official TensorFlow ecosystem. Keras powers research and production ML
+        at Google, NASA, CERN, and thousands of companies worldwide — with over
+        <strong>60 million downloads per month</strong>.
+      </p>
+      <div class="os-stats">
+        <div class="os-stat">
+          <div class="os-stat-val">60M+</div>
+          <div class="os-stat-label">Monthly downloads</div>
+        </div>
+        <div class="os-stat">
+          <div class="os-stat-val">62k+</div>
+          <div class="os-stat-label">GitHub stars</div>
+        </div>
+        <div class="os-stat">
+          <div class="os-stat-val">1.2k+</div>
+          <div class="os-stat-label">Contributors</div>
+        </div>
+      </div>
+      <div class="exp-stack">
+        <span class="chip">Python</span>
+        <span class="chip">TensorFlow</span>
+        <span class="chip">Deep Learning</span>
+        <span class="chip">Open Source</span>
+      </div>
+      <div class="proj-links" style="margin-top:1.25rem">
+        <a href="https://github.com/keras-team/keras" target="_blank" class="proj-link">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          keras-team/keras ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CERTIFICATIONS ────────────────────────────────────────────────── -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-label reveal">06 — Certifications</div>
+    <h2 class="section-title reveal">What I've <em>earned.</em></h2>
+    <div class="cert-grid">
+
+      <!-- IBM AI Professional -->
+      <div class="cert-card reveal">
+        <div class="cert-issuer-row">
+          <span class="cert-issuer">IBM</span>
+          <span class="cert-year">2026</span>
+        </div>
+        <div class="cert-name">IBM AI Engineering Professional Certificate</div>
+        <p class="cert-desc">
+          Comprehensive professional certification covering machine learning, deep learning,
+          neural networks, computer vision, and NLP. Includes hands-on projects
+          using TensorFlow, Keras, PyTorch, and Scikit-Learn.
+        </p>
+        <div class="cert-tags">
+          <span class="proj-tag">Machine Learning</span>
+          <span class="proj-tag">Deep Learning</span>
+          <span class="proj-tag">TensorFlow</span>
+          <span class="proj-tag">PyTorch</span>
+          <span class="proj-tag">Keras</span>
+        </div>
+      </div>
+
+      <!-- CS50x -->
+      <div class="cert-card reveal" style="transition-delay:0.1s">
+        <div class="cert-issuer-row">
+          <span class="cert-issuer">Harvard / CS50</span>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-name">CS50x — Introduction to Computer Science</div>
+        <p class="cert-desc">
+          Harvard's renowned introduction to computer science and programming.
+          Covers algorithms, data structures, memory management, web development,
+          and problem-solving in C, Python, SQL, and JavaScript.
+        </p>
+        <div class="cert-tags">
+          <span class="proj-tag">Algorithms</span>
+          <span class="proj-tag">C</span>
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">Web</span>
+        </div>
+      </div>
+
+      <!-- CS50 Python -->
+      <div class="cert-card reveal" style="transition-delay:0.2s">
+        <div class="cert-issuer-row">
+          <span class="cert-issuer">Harvard / CS50</span>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-name">CS50P — Introduction to Programming with Python</div>
+        <p class="cert-desc">
+          Harvard's Python-focused programming course. Covers functions, exceptions,
+          libraries, file I/O, regular expressions, object-oriented programming,
+          and unit testing through progressively challenging problem sets.
+        </p>
+        <div class="cert-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">OOP</span>
+          <span class="proj-tag">Unit Testing</span>
+          <span class="proj-tag">Regex</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ─── ASSOCIATIONS ───────────────────────────────────────────────── -->
 <section id="associations">
   <div class="section-inner">
@@ -958,12 +1127,18 @@
         <div class="assoc-org">IEEE — Institute of Electrical and Electronics Engineers</div>
         <div class="assoc-role">Active Member · Since September 2023</div>
         <p class="assoc-desc">
-          Participating in technical workshops covering programming, algorithms, cybersecurity, 
-          and AI — including SECURIDAY XVII. Competed in IEEEXtreme 18.0, a 24-hour international 
-          algorithmic hackathon.
+          Participating in technical workshops covering programming, algorithms,
+          and AI. Competed in several competitive programming contests.
         </p>
       </div>
       <div class="assoc-card reveal" style="transition-delay:0.1s">
+        <div class="assoc-org">Securinets INSAT</div>
+        <div class="assoc-role">Active Member · Since September 2025</div>
+        <p class="assoc-desc">
+          Participating in technical workshops and conferences covering reverse engineering and cybersecurity.
+        </p>
+      </div>
+      <div class="assoc-card reveal" style="transition-delay:0.15s">
         <div class="assoc-org">TIMUN — Tunisian International Model United Nations</div>
         <div class="assoc-role">Member · Sept. 2020 – July 2022</div>
         <p class="assoc-desc">
@@ -979,7 +1154,7 @@
 <!-- ─── CONTACT ────────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="section-inner">
-    <div class="section-label reveal" style="justify-content:center">05 — Contact</div>
+    <div class="section-label reveal" style="justify-content:center">07 — Contact</div>
     <h2 class="contact-tagline reveal">Let's build something <em style="color:var(--primary-container);font-style:normal">remarkable.</em></h2>
     <p class="contact-sub reveal">
       I'm open to internships, collaborations, and interesting problems. 
@@ -990,25 +1165,32 @@
         <span class="contact-link-icon">✉</span>
         <div class="contact-link-text">
           <div class="contact-link-label">Email</div>
-          <div class="contact-link-val">adam.saidane@insat.ucar.tn</div>
+          <div class="contact-link-val">adam.saidane@insat.ucar.tn<span></div>
         </div>
       </a>
-      <a href="tel:+21656179434" class="contact-link-card">
-        <span class="contact-link-icon">📞</span>
+      <a href="https://www.linkedin.com/in/adam-saidane-5461aa353/" class="contact-link-card" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo" width="20" style="filter: invert(1);">
         <div class="contact-link-text">
-          <div class="contact-link-label">Phone</div>
-          <div class="contact-link-val">(+216) 56 179 434</div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">Adam Saidane</div>
         </div>
       </a>
       <a href="https://github.com/adamsaidane" target="_blank" class="contact-link-card">
-        <span class="contact-link-icon">⌥</span>
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" width="20" style="filter: invert(1);">
         <div class="contact-link-text">
           <div class="contact-link-label">GitHub</div>
           <div class="contact-link-val">@adamsaidane</div>
         </div>
       </a>
+      <a href="CV_Adam_Saidane.pdf" download class="contact-link-card">
+        <span class="contact-link-icon">↓</span>
+        <div class="contact-link-text">
+          <div class="contact-link-label">Resume</div>
+          <div class="contact-link-val">Download CV</div>
+        </div>
+      </a>
     </div>
-    <a href="mailto:adam.saidane@insat.ucar.tn" class="btn-primary reveal">Start a conversation →</a>
+    <a href="/cdn-cgi/l/email-protection#325356535f1c41535b56535c57725b5c4153461c475153401c465c" class="btn-primary reveal">Start a conversation →</a>
   </div>
 </section>
 
@@ -1017,7 +1199,7 @@
   <p>Designed & built by <span>Adam Saidane</span> · INSAT Tunis · 2025</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* ─── Cursor ───────────────────────────────────── */
   const dot  = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
@@ -1055,7 +1237,7 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => observer.observe(r));
 
-  /* ─── Staggered hero reveal on load ───────────── */
+  /* Hero reveal on load */
   document.querySelectorAll('.hero-left, .hero-right').forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 100 + i * 200);
   });
