@@ -111,6 +111,14 @@ const SITE_DATA = {
     title: "Things I <em>built</em>.",
     items: [
       {
+        image: "images/medassist.png",
+        alt: "AI Medical Assistant",
+        title: "MedAssistAI",
+        desc: "AI-powered medical assistance platform combining conversational AI, symptom-based disease assessment, retrieval-augmented generation, and medical image analysis. The system integrates a FastAPI backend with a React frontend and uses LLMs to provide structured, context-aware assistance while supporting patient–doctor interactions and medical image analysis.",
+        stack: ["Python", "FastAPI", "React", "LLMs", "RAG", "Ollama", "SQLAlchemy", "PostgreSQL"],
+        github: "https://github.com/adamsaidane/AIMedicalAssistant",
+      },
+      {
         image: "images/traffic.png",
         alt: "AI Traffic Lights Manager",
         title: "AI Traffic Lights Manager",
@@ -173,6 +181,13 @@ const SITE_DATA = {
     label: "05 — Certifications",
     title: "What I've <em>earned.</em>",
     items: [
+      {
+        issuer: "IBM",
+        year: "2026",
+        name: "Generative AI Engineering with LLMs Specialization",
+        desc: "Professional specialization focused on building generative AI applications with large language models, covering prompt engineering, LLM architecture, fine-tuning, RAG, and AI application development.",
+        tags: ["Generative AI", "LLMs", "Prompt Engineering", "RAG", "AI Engineering"],
+      },
       {
         issuer: "IBM",
         year: "2026",
