@@ -1,11 +1,3 @@
-/* ════════════════════════════════════════════════════════════════
-   SITE DATA
-   ────────────────────────────────────────────────────────────────
-   C'est LE seul fichier à modifier pour changer le contenu du site :
-   ajouter un projet, une certif, changer un texte, un lien, etc.
-   Aucune connaissance HTML/CSS n'est nécessaire pour éditer ceci.
-   ════════════════════════════════════════════════════════════════ */
-
 const GITHUB_ICON_SVG = `<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>`;
 
 const SITE_DATA = {
@@ -53,18 +45,21 @@ const SITE_DATA = {
     label: "01 — About",
     title: "Engineer by training,<br><em>builder by nature.</em>",
     paragraphs: [
-      `I'm Adam, a <strong>Software Engineering student at INSAT</strong> in Tunis.
-       My work sits at the intersection of software architecture, data systems, and AI,
-       and I bring that range into every project I build.`,
-      `During my internship at <strong>IID</strong>,
-       I designed and delivered production-ready banking APIs using Spring Boot,
-       pushed test coverage beyond <strong>96%</strong> with JUnit and Mockito,
-       and led a full CRM version migration in a live codebase.`,
-      `Beyond that, I build projects driven by curiosity: a reinforcement learning traffic system that reduced waiting times by <strong>60%</strong>,
-       a football Expected Goals model using XGBoost,
-       and a full-stack HR management platform.`,
+      `I'm Adam, a <strong> Software Engineering student at INSAT</strong> in Tunis.
+      My work sits at the intersection of software architecture, data engineering, and AI,
+      and I bring that range into every project I build.`,
+      `At <strong>Teamwill</strong>, I worked as a Data Engineer Intern, designing a generic ETL pipeline
+      that dynamically syncs unknown PostgreSQL schemas — with checksum-based streaming diffs,
+      automatic foreign-key dependency resolution, and fault-tolerant transaction handling at scale.`,
+      `At <strong>Welyne</strong>, I built an AI-powered financial reporting backend
+      with FastAPI`,
+      `At <strong>IID</strong>, I delivered production-ready banking APIs using Spring Boot,
+      and leading a full CRM version migration in a live codebase.`,
+      `Beyond internships, I build projects driven by curiosity: an intelligent medical assistance platform, 
+      a reinforcement learning traffic system that reduced waiting times by 60%, a football Expected Goals model 
+      using XGBoost, and a full-stack HR management platform.`,
       `I'm <strong>trilingual</strong> — Arabic, English, French — and I enjoy working in collaborative,
-       international environments on challenging, high-impact problems.`,
+      international environments on challenging, high-impact problems.`,
     ],
     education: [
       {
@@ -93,8 +88,32 @@ const SITE_DATA = {
     title: "Where I've <em>shipped</em> things.",
     items: [
       {
+        company: "Teamwill",
+        role: "Data Engineer Intern",
+        date: "July – August 2026 · Tunis",
+        bullets: [
+          "Designed and built a generic Talend/Java ETL pipeline synchronizing two unknown PostgreSQL schemas, dynamically discovering tables, columns, and constraints runtime.",
+          "Engineered a streaming row-comparison engine (checksum-based diffing with server-side cursors) achieving O(1) memory per table, avoiding full table loads on datasets of arbitrary size.",
+          "Implemented automatic foreign-key dependency resolution (topological sort) to generate transaction-safe INSERT/UPDATE/DELETE scripts respecting referential integrity constraints",
+          "Added fault-tolerance layer with retry/backoff logic, connection recovery, and REPEATABLE READ transaction snapshots to guarantee consistent reads under concurrent writes.",
+        ],
+        stack: ["Java", "Talend Studio", "PostgreSQL", "JDBC", "SQL"],
+      },
+      {
+        company: "Welyne",
+        role: "AI Engineer Intern",
+        date: "April – June 2026 · Tunis",
+        bullets: [
+          "Built a FastAPI backend automating monthly financial reporting: CSV ingestion, KPI computation, and AIgenerated analysis.",
+          "Designed an asynchronous background pipeline (upload → processing → PDF generation) with real-time task status tracking via REST endpoints.",
+          "Generated automated PDF reports combining financial KPIs and AI-written insights using ReportLab, Pandas, and Matplotlib.",
+
+        ],
+        stack: ["Python", "FastAPI", "Pandas", "ReportLab", "Pytest"],
+      },
+      {
         company: "International Information Development (IID)",
-        role: "Analyst Developer Intern",
+        role: "Software Engineer Intern",
         date: "July – August 2025 · Tunis",
         bullets: [
           "Designed and implemented Java Spring Boot REST services for the ECHO Credit Card project (card lifecycle management) and ECHOS Ecommerce (financial calculation services).",
