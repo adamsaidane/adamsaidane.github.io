@@ -19,10 +19,10 @@ const SITE_DATA = {
     tag: "Software Engineer · INSAT Tunis",
     nameFirst: "Adam",
     nameLast: "Saidane",
-    role: "Building systems that scale,<br>models that predict, products that matter.",
-    desc: `Second-year Software Engineering student at INSAT.
-      I build full-stack web applications, data science pipelines, and intelligent systems
-      — from REST APIs to advanced AI models.`,
+    role: "Building systems that scale, models that predict, products that matter.",
+    desc: `Second-year Software Engineering student at INSAT, based in Tunis. Most of my time goes
+      into backend systems and data pipelines, with a growing interest in applied ML — usually
+      whichever part of the stack is currently broken.`,
     ctaPrimary: { label: "View Projects", href: "#projects" },
     ctaGhost:   { label: "GitHub ↗", href: "https://github.com/adamsaidane" },
     terminal: {
@@ -45,9 +45,10 @@ const SITE_DATA = {
     label: "01 — About",
     title: "Engineer by training,<br><em>builder by nature.</em>",
     paragraphs: [
-      `I'm Adam, a <strong> Software Engineering student at INSAT</strong> in Tunis.
-      My work sits at the intersection of software architecture, data engineering, and AI,
-      and I bring that range into every project I build.`,
+      `I'm Adam, a <strong>Software Engineering student at INSAT</strong> in Tunis.
+      I've spent the last couple of years moving between backend architecture, data
+      engineering, and applied ML — and I've found the overlap between them is usually
+      where the interesting problems live.`,
       `At <strong>Teamwill</strong>, I worked as a Data Engineer Intern, designing a generic ETL pipeline
       that dynamically syncs unknown PostgreSQL schemas — with checksum-based streaming diffs,
       automatic foreign-key dependency resolution, and fault-tolerant transaction handling at scale.`,
@@ -238,6 +239,6 @@ const SITE_DATA = {
   },
 
   footer: {
-    text: `Designed & built by <span>Adam Saidane</span> · INSAT Tunis · 2026`,
+    text: `Designed & built by <span>Adam Saidane</span> - 2026`,
   },
 };

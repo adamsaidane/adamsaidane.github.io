@@ -21,14 +21,20 @@ function renderNav(d) {
     <div class="nav-links">
       ${links}
     </div>
-    <a href="${d.nav.resumeFile}" download class="nav-cta">↓ Resume</a>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a href="${d.nav.resumeFile}" download class="nav-cta">↓ Resume</a>
+    </div>
   `;
 }
 
 function renderHero(d) {
   const h = d.hero;
   const fields = h.terminal.fields.map(f =>
-    `<div class="t-line">&nbsp;&nbsp;<span class="t-prompt">"${f.key}"</span>: <span class="t-val">"${f.value}"</span></div>`
+    `<div class="t-line"><span class="t-prompt">${f.key}</span><span class="t-val">${f.value}</span></div>`
   ).join("\n        ");
   const stats = h.stats.map(s => `
       <div class="stat-card">
@@ -39,7 +45,7 @@ function renderHero(d) {
   document.getElementById("hero").innerHTML = `
   <div class="hero-left reveal">
     <div class="hero-tag">${h.tag}</div>
-    <h1 class="hero-name">${h.nameFirst}<br><span class="accent">${h.nameLast}</span></h1>
+    <h1 class="hero-name">${h.nameFirst} <span class="accent">${h.nameLast}</span></h1>
     <p class="hero-role">${h.role}</p>
     <p class="hero-desc">${h.desc}</p>
     <div class="hero-actions">
@@ -48,20 +54,10 @@ function renderHero(d) {
     </div>
   </div>
 
-  <div class="hero-right reveal" style="transition-delay:0.2s">
+  <div class="hero-right reveal" style="transition-delay:0.15s">
     <div class="terminal">
-      <div class="terminal-bar">
-        <div class="t-dot red"></div>
-        <div class="t-dot yellow"></div>
-        <div class="t-dot green"></div>
-        <span class="terminal-title">${h.terminal.title}</span>
-      </div>
       <div class="terminal-body">
-        <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cmd">cat</span> profile.json</div>
-        <div class="t-line"><span class="t-comment">{</span></div>
         ${fields}
-        <div class="t-line"><span class="t-comment">}</span></div>
-        <div class="t-line"><span class="t-prompt">❯</span> <span class="t-cursor"></span></div>
       </div>
     </div>
 
@@ -260,35 +256,35 @@ function renderContact(d) {
     <p class="contact-sub reveal">${c.sub}</p>
     <div class="contact-links reveal">
       <a href="mailto:${c.email}" class="contact-link-card">
-        <span class="contact-link-icon">✉</span>
+        <span class="contact-icon" style="-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg');mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')"></span>
         <div class="contact-link-text">
           <div class="contact-link-label">Email</div>
           <div class="contact-link-val">${c.email}</div>
         </div>
       </a>
       <a href="${c.phoneHref}" class="contact-link-card">
-        <span class="contact-link-icon">📞</span>
+        <span class="contact-icon" style="-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/phone.svg');mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/phone.svg')"></span>
         <div class="contact-link-text">
           <div class="contact-link-label">Phone</div>
           <div class="contact-link-val">${c.phone}</div>
         </div>
       </a>
       <a href="${c.linkedin.url}" class="contact-link-card" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn Logo" width="20" style="filter: invert(1);">
+        <span class="contact-icon" style="-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg')"></span>
         <div class="contact-link-text">
           <div class="contact-link-label">LinkedIn</div>
           <div class="contact-link-val">${c.linkedin.label}</div>
         </div>
       </a>
       <a href="${c.github.url}" target="_blank" class="contact-link-card">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" width="20" style="filter: invert(1);">
+        <span class="contact-icon" style="-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg');mask-image:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')"></span>
         <div class="contact-link-text">
           <div class="contact-link-label">GitHub</div>
           <div class="contact-link-val">${c.github.label}</div>
         </div>
       </a>
       <a href="${c.resumeFile}" download class="contact-link-card">
-        <span class="contact-link-icon">↓</span>
+        <span class="contact-icon" style="-webkit-mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/download.svg');mask-image:url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/download.svg')"></span>
         <div class="contact-link-text">
           <div class="contact-link-label">Resume</div>
           <div class="contact-link-val">Download CV</div>
